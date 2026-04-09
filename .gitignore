@@ -1,2 +1,3 @@
-./logs/
-./param_opt.sqlite3
+logs/*
+param_opt.sqlite3
+.env
