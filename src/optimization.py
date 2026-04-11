@@ -23,15 +23,15 @@ def get_iqm(sample):
     q3 = np.quantile(sample, 0.75)
     return np.mean(sample[(sample >= q1) & (sample <= q3)])
 
-def objective(trial: Trial, env, algorithm_func, n_seeds=5):
+def objective(trial: Trial, env, algorithm_func, n_seeds = 10):
     # Suggest parameters
     params = {
-        "alpha": trial.suggest_float("alpha", 0.0001, 0.5, log = True),
-        "gamma": trial.suggest_float("gamma", 0.8, 0.9999),
+        "alpha": trial.suggest_float("alpha", 0.001, 0.3, log = True),
+        "gamma": trial.suggest_float("gamma", 0.9, 0.999),
         "epsilon": 1.0,
-        "epsilon_decay": trial.suggest_float("epsilon_decay", 0.9, 0.9999),
-        "epsilon_min": 0.01,
-        "n_episodes": 400
+        "epsilon_decay": trial.suggest_float("epsilon_decay", 0.9, 0.999),
+        "epsilon_min": 0.05,
+        "n_episodes": 500
     }
     
     seed_scores = []
@@ -41,13 +41,22 @@ def objective(trial: Trial, env, algorithm_func, n_seeds=5):
 
         _, rewards = algorithm_func(env, params = params, show_progress = False, seed = seed)
         
-        seed_auc = np.sum(rewards)
-        seed_scores.append(seed_auc)
+        score = np.sum(rewards)
+        seed_scores.append(score)
 
-        opt_log.info(f"Trial {trial.number} | Seed {seed} | Ended | Score: {params}")
+        opt_log.info(f"Trial {trial.number} | Seed {seed} | Ended | Score: {score}")
+        
+        # Report intermediate value for pruning
+        trial.report(np.mean(seed_scores), step = seed)
+        
+        # Allow pruner to stop unpromising trials
+        if trial.should_prune():
+            raise optuna.TrialPruned()
         
     iqm = get_iqm(seed_scores)
-    opt_log.info(f"Trial {trial.number} | Score: {iqm}")
+    std = np.std(seed_scores)
+
+    opt_log.info(f"Trial {trial.number} | Score: {iqm} | Std: {std}")
 
     return iqm
 
