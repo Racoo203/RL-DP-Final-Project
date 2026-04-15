@@ -2,6 +2,7 @@ import numpy as np
 
 import optuna
 from optuna.trial import Trial
+import gymnasium as gym
 
 import threading
 from tqdm import tqdm
@@ -23,33 +24,61 @@ def get_iqm(sample):
     q3 = np.quantile(sample, 0.75)
     return np.mean(sample[(sample >= q1) & (sample <= q3)])
 
-def objective(trial: Trial, env, algorithm_func, n_seeds = 10):
-    # Suggest parameters
+def get_params(trial: Trial, alg_name):
+    """
+    Returns only the hyperparameters relevant to the specific algorithm.
+    """
+    # Common parameters
     params = {
-        "alpha": trial.suggest_float("alpha", 0.001, 0.3, log = True),
-        "gamma": trial.suggest_float("gamma", 0.9, 0.999),
-        "epsilon": 1.0,
-        "epsilon_decay": trial.suggest_float("epsilon_decay", 0.9, 0.999),
-        "epsilon_min": 0.05,
-        "n_episodes": 500
+        # Problem parameters: <- Fixed parameters to the given problem
+        "n_episodes": 250,
+        "gamma": 0.99,
+
+        # Config parameters: <- Display and Robustness testing
+        "show_progress": False,
+
+        # Algorithm parameters: <- Parameters optimized for robust algorithms
+        "alpha": trial.suggest_float("alpha", 1e-4, 0.5, log = True),
     }
+
+    # Algorithm-specific Logic
+    if alg_name in ["alg_SARSA", "alg_Q", "alg_nStep_SARSA", "alg_SARSA_Lambda"]:
+        params["epsilon"] = 1.0
+        params["epsilon_decay"] = trial.suggest_float("epsilon_decay", 0.9, 0.999)
+        params["epsilon_min"] = 0.05
+
+    if alg_name == "alg_nStep_SARSA":
+        params["n"] = trial.suggest_int("n", 2, 16)
+
+    if alg_name == "alg_SARSA_Lambda":
+        params["lambda"] = trial.suggest_float("lambda", 0.0, 1.0)
     
+    if alg_name == "alg_REINFORCE":
+        # Policy gradients usually need smaller learning rates
+        params["alpha"] = trial.suggest_float("alpha", 1e-5, 1e-2, log = True)
+        # REINFORCE doesn't use epsilon
+        
+    return params
+
+def objective(trial: Trial, algorithm_func, n_seeds = 5):
+    local_env = gym.make("Acrobot-v1")
+    params = get_params(trial, algorithm_func.__name__)
     seed_scores = []
     
     for seed in range(n_seeds):
+        params["seed"] = seed
         opt_log.info(f"Trial {trial.number} | Seed {seed} | Starting | Params: {params}")
 
-        _, rewards = algorithm_func(env, params = params, show_progress = False, seed = seed)
+        _, rewards_history = algorithm_func(local_env, params = params)
         
-        score = np.sum(rewards)
+        last_n = int(len(rewards_history) * 0.1)
+        score = np.mean(rewards_history[-last_n:])
         seed_scores.append(score)
 
         opt_log.info(f"Trial {trial.number} | Seed {seed} | Ended | Score: {score}")
         
-        # Report intermediate value for pruning
         trial.report(np.mean(seed_scores), step = seed)
         
-        # Allow pruner to stop unpromising trials
         if trial.should_prune():
             raise optuna.TrialPruned()
         
@@ -62,8 +91,13 @@ def objective(trial: Trial, env, algorithm_func, n_seeds = 10):
 
 def param_opt_pipeline(algorithm, env, n_trials = 64):
 
+    storage = optuna.storages.RDBStorage(
+        url = "sqlite:///param_opt.sqlite3",
+        engine_kwargs = {"connect_args": {"timeout": 10}}
+    )
+
     study = optuna.create_study(
-        storage = "sqlite:///param_opt.sqlite3",
+        storage = storage,
         study_name = algorithm.__name__,
         load_if_exists = True,
         direction = "maximize",
@@ -76,10 +110,10 @@ def param_opt_pipeline(algorithm, env, n_trials = 64):
             pbar.update(1)
 
         study.optimize(
-            lambda trial: objective(trial, env, algorithm), 
+            lambda trial: objective(trial, algorithm), 
             n_trials = n_trials,
-            # n_jobs = -1,
-            callbacks = [callback]
+            callbacks = [callback],
+            n_jobs = 4
         )
 
         # n_jobs helps with doing multiple trials at once,
