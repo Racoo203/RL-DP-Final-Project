@@ -1,7 +1,9 @@
 import pickle
+from collections import Counter
 
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 from src.logger import LogManager
 
@@ -38,3 +40,28 @@ def plot_learning_curve(rewards, label):
     plt.show()
 
     main_log.info(f"Plot created in notebook.")
+
+def moving_avg(x, window=50):
+    return np.convolve(x, np.ones(window)/window, mode='valid')
+
+def plot_smoothed_learning_curve(rewards, name):
+    plt.figure(figsize=(10,5))
+    plt.plot(moving_avg(rewards), label = "Smoothed rewards")
+    plt.title(f"Smoothed Learning Curve: {name}")
+    plt.legend()
+    plt.show()
+
+def plot_state_visits(visited_states):
+    counts = Counter(visited_states)
+    values = list(counts.values())
+    plt.hist(values, bins=50)
+
+def compute_entropy(policy):
+    entropies = []
+    for probs in policy.values():
+        entropies.append(-np.sum(probs * np.log(probs + 1e-8)))
+    return np.mean(entropies)
+
+def q_stats(Q):
+    values = np.concatenate(list(Q.values()))
+    return np.mean(values), np.std(values)

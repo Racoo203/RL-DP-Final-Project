@@ -36,13 +36,11 @@ def get_params(trial: Trial, alg_name):
 
         # Config parameters: <- Display and Robustness testing
         "show_progress": False,
-
-        # Algorithm parameters: <- Parameters optimized for robust algorithms
-        "alpha": trial.suggest_float("alpha", 1e-4, 0.5, log = True),
     }
 
-    # Algorithm-specific Logic
+    # Algorithm parameters: <- Parameters optimized for robust algorithms
     if alg_name in ["alg_SARSA", "alg_Q", "alg_nStep_SARSA", "alg_SARSA_Lambda"]:
+        params["alpha"] = trial.suggest_float("alpha", 1e-4, 0.5, log = True)
         params["epsilon"] = 1.0
         params["epsilon_decay"] = trial.suggest_float("epsilon_decay", 0.9, 0.999)
         params["epsilon_min"] = 0.05
@@ -53,14 +51,16 @@ def get_params(trial: Trial, alg_name):
     if alg_name == "alg_SARSA_Lambda":
         params["lambda"] = trial.suggest_float("lambda", 0.0, 1.0)
     
-    if alg_name == "alg_REINFORCE":
+    if alg_name == "alg_REINFORCE_B":
         # Policy gradients usually need smaller learning rates
-        params["alpha"] = trial.suggest_float("alpha", 1e-5, 1e-2, log = True)
+        params["alpha_theta"] = trial.suggest_float("alpha", 1e-12, 1e-4, log = True)
+        params["alpha_w"] = trial.suggest_float("alpha", 1e-12, 1e-4, log = True)
+
         # REINFORCE doesn't use epsilon
         
     return params
 
-def objective(trial: Trial, algorithm_func, n_seeds = 5):
+def objective(trial: Trial, algorithm_func, n_seeds = 10):
     local_env = gym.make("Acrobot-v1")
     params = get_params(trial, algorithm_func.__name__)
     seed_scores = []
@@ -89,7 +89,7 @@ def objective(trial: Trial, algorithm_func, n_seeds = 5):
 
     return iqm
 
-def param_opt_pipeline(algorithm, env, n_trials = 64):
+def param_opt_pipeline(algorithm, n_trials = 64):
 
     storage = optuna.storages.RDBStorage(
         url = "sqlite:///param_opt.sqlite3",
