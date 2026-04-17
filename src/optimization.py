@@ -40,7 +40,7 @@ def get_params(trial: Trial, alg_name):
 
     # Algorithm parameters: <- Parameters optimized for robust algorithms
     if alg_name in ["alg_SARSA", "alg_Q", "alg_nStep_SARSA", "alg_SARSA_Lambda"]:
-        params["alpha"] = trial.suggest_float("alpha", 1e-4, 0.5, log = True)
+        params["alpha"] = trial.suggest_float("alpha", 1e-3, 0.5, log = True)
         params["epsilon"] = 1.0
         params["epsilon_decay"] = trial.suggest_float("epsilon_decay", 0.9, 0.999)
         params["epsilon_min"] = 0.05
@@ -60,7 +60,7 @@ def get_params(trial: Trial, alg_name):
         
     return params
 
-def objective(trial: Trial, algorithm_func, n_seeds = 10):
+def objective(trial: Trial, algorithm_func, n_seeds = 3):
     local_env = gym.make("Acrobot-v1")
     params = get_params(trial, algorithm_func.__name__)
     seed_scores = []

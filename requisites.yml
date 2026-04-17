@@ -83,6 +83,7 @@ dependencies:
   - jax-jumpy=1.0.0=pyhd8ed1ab_1
   - jedi=0.19.2=pyhd8ed1ab_1
   - jinja2=3.1.6=pyhcf101f3_1
+  - joblib=1.5.3=pyhd8ed1ab_0
   - json5=0.13.0=pyhd8ed1ab_0
   - jsonpointer=3.1.0=pyhcf101f3_0
   - jsonschema=4.26.0=pyhcf101f3_0
@@ -167,7 +168,7 @@ dependencies:
   - notebook-shim=0.2.4=pyhd8ed1ab_1
   - numpy=2.4.2=py311h80b3fa1_1
   - openjpeg=2.5.4=h24db6dd_0
-  - openssl=3.6.1=hf411b9b_1
+  - openssl=3.6.2=hf411b9b_0
   - optree=0.18.0=py311h3fd045d_0
   - overrides=7.7.0=pyhd8ed1ab_1
   - packaging=25.0=pyh29332c3_1
