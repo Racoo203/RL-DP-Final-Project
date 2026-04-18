@@ -2706,3 +2706,19 @@
 2026-04-18 08:35:02 | INFO    | Trial 1 | Seed 5 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.36064995715525155, 'epsilon': 1.0, 'epsilon_decay': 0.9493876413480057, 'epsilon_min': 0.05, 'lambda': 0.07922733191588427, 'seed': 5}
 2026-04-18 08:35:12 | INFO    | Trial 3 | Seed 2 | Ended | Score: -500.0
 2026-04-18 08:35:18 | INFO    | Trial 3 | Seed 3 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.001704719191362541, 'epsilon': 1.0, 'epsilon_decay': 0.9922107521196574, 'epsilon_min': 0.05, 'lambda': 0.14803132742254277, 'seed': 3}
+2026-04-18 14:31:17 | INFO    | Trial 2 | Seed 0 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.04723509090226931, 'epsilon': 1.0, 'epsilon_decay': 0.9127814215019862, 'epsilon_min': 0.05, 'seed': 0}
+2026-04-18 14:31:17 | INFO    | Trial 3 | Seed 0 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.01858873844999333, 'epsilon': 1.0, 'epsilon_decay': 0.9538037597156819, 'epsilon_min': 0.05, 'seed': 0}
+2026-04-18 14:31:17 | INFO    | Trial 1 | Seed 0 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.40319224796630493, 'epsilon': 1.0, 'epsilon_decay': 0.9829397603032037, 'epsilon_min': 0.05, 'seed': 0}
+2026-04-18 14:31:17 | INFO    | Trial 0 | Seed 0 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.19026069750812263, 'epsilon': 1.0, 'epsilon_decay': 0.938529272426959, 'epsilon_min': 0.05, 'seed': 0}
+2026-04-18 14:31:18 | INFO    | Trial 4 | Seed 0 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.00214120721909582, 'epsilon': 1.0, 'epsilon_decay': 0.9043846224214465, 'epsilon_min': 0.05, 'seed': 0}
+2026-04-18 14:31:18 | INFO    | Trial 5 | Seed 0 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.0928532231519453, 'epsilon': 1.0, 'epsilon_decay': 0.9312223039133237, 'epsilon_min': 0.05, 'seed': 0}
+2026-04-18 14:34:27 | INFO    | Trial 2 | Seed 0 | Ended | Score: -429.52
+2026-04-18 14:34:38 | INFO    | Trial 2 | Seed 1 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.04723509090226931, 'epsilon': 1.0, 'epsilon_decay': 0.9127814215019862, 'epsilon_min': 0.05, 'seed': 1}
+2026-04-18 14:35:01 | INFO    | Trial 4 | Seed 0 | Ended | Score: -492.96
+2026-04-18 14:35:02 | INFO    | Trial 0 | Seed 0 | Ended | Score: -313.16
+2026-04-18 14:35:05 | INFO    | Trial 4 | Seed 1 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.00214120721909582, 'epsilon': 1.0, 'epsilon_decay': 0.9043846224214465, 'epsilon_min': 0.05, 'seed': 1}
+2026-04-18 14:35:06 | INFO    | Trial 0 | Seed 1 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.19026069750812263, 'epsilon': 1.0, 'epsilon_decay': 0.938529272426959, 'epsilon_min': 0.05, 'seed': 1}
+2026-04-18 14:35:16 | INFO    | Trial 5 | Seed 0 | Ended | Score: -376.16
+2026-04-18 14:35:19 | INFO    | Trial 5 | Seed 1 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.0928532231519453, 'epsilon': 1.0, 'epsilon_decay': 0.9312223039133237, 'epsilon_min': 0.05, 'seed': 1}
+2026-04-18 14:35:19 | INFO    | Trial 3 | Seed 0 | Ended | Score: -452.48
+2026-04-18 14:35:21 | INFO    | Trial 3 | Seed 1 | Starting | Params: {'n_episodes': 250, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.01858873844999333, 'epsilon': 1.0, 'epsilon_decay': 0.9538037597156819, 'epsilon_min': 0.05, 'seed': 1}

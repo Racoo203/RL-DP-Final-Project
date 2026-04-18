@@ -77,3 +77,71 @@
 2026-04-18 08:05:30 | INFO    | Action Space: Discrete(3)
 2026-04-18 08:05:30 | INFO    | Discretization Bins: [10 10 12 12]
 2026-04-18 08:05:50 | INFO    | Starting Optuna Hyperparameter Search: alg_SARSA_Lambda
+2026-04-18 14:14:16 | INFO    | --- New Session Started ---
+2026-04-18 14:14:16 | INFO    | Environment: Acrobot-v1
+2026-04-18 14:14:16 | INFO    | Initial State: (array([ 0.99994284,  0.01069374,  0.99967664, -0.02542738,  0.09013481,
+       -0.02894117], dtype=float32), {})
+2026-04-18 14:14:16 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 14:14:16 | INFO    | Action Space: Discrete(3)
+2026-04-18 14:14:17 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-18 14:14:17 | INFO    | Starting Experiment: SARSA
+2026-04-18 14:14:17 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'epsilon': 1.0, 'epsilon_min': 0.05, 'seed': 42, 'show_progress': False, 'alpha': 0.15, 'epsilon_decay': 0.99}
+2026-04-18 14:16:57 | INFO    | SARSA Training Completed
+2026-04-18 14:16:57 | INFO    | Model checkpoint saved: models/SARSA.pkl
+2026-04-18 14:26:11 | INFO    | --- New Session Started ---
+2026-04-18 14:26:11 | INFO    | Environment: Acrobot-v1
+2026-04-18 14:26:11 | INFO    | Initial State: (array([ 9.9999952e-01,  9.9581119e-04,  9.9538803e-01, -9.5930308e-02,
+       -3.4806941e-02, -5.1610429e-02], dtype=float32), {})
+2026-04-18 14:26:11 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 14:26:11 | INFO    | Action Space: Discrete(3)
+2026-04-18 14:26:11 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-18 14:26:12 | INFO    | Starting Experiment: SARSA
+2026-04-18 14:26:12 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'epsilon': 1.0, 'epsilon_min': 0.05, 'seed': 42, 'show_progress': False, 'alpha': 0.15, 'epsilon_decay': 0.99}
+2026-04-18 14:30:48 | INFO    | SARSA Training Completed
+2026-04-18 14:30:48 | INFO    | Model checkpoint saved: models/SARSA.pkl
+2026-04-18 14:30:53 | INFO    | SARSA Evaluation (Greedy): {'mean_reward': np.float64(-223.95), 'std_reward': np.float64(90.08189329715489), 'mean_steps': np.float64(224.95), 'success_rate': np.float64(1.0)}
+2026-04-18 14:30:54 | INFO    | Plot created in notebook.
+2026-04-18 14:31:15 | INFO    | Starting Optuna Hyperparameter Search: alg_Q
+2026-04-18 15:05:12 | INFO    | --- New Session Started ---
+2026-04-18 15:05:12 | INFO    | Environment: Acrobot-v1
+2026-04-18 15:05:12 | INFO    | Initial State: (array([ 0.999814  , -0.01928745,  0.9997229 , -0.02354066, -0.09844299,
+       -0.08386675], dtype=float32), {})
+2026-04-18 15:05:12 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 15:05:12 | INFO    | Action Space: Discrete(3)
+2026-04-18 15:05:13 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-18 15:05:14 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA.pkl
+2026-04-18 15:06:14 | INFO    | --- New Session Started ---
+2026-04-18 15:06:14 | INFO    | Environment: Acrobot-v1
+2026-04-18 15:06:14 | INFO    | Initial State: (array([ 0.9999578 , -0.00918407,  0.9965111 , -0.08346055,  0.07059401,
+       -0.04203899], dtype=float32), {})
+2026-04-18 15:06:14 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 15:06:14 | INFO    | Action Space: Discrete(3)
+2026-04-18 15:06:14 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-18 15:06:17 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA.pkl
+2026-04-18 15:06:19 | INFO    | Model checkpoint saved: models/_smoke_alg_Q.pkl
+2026-04-18 15:06:20 | INFO    | Model checkpoint saved: models/_smoke_alg_nStep_SARSA.pkl
+2026-04-18 15:06:22 | INFO    | Model checkpoint saved: models/_smoke_alg_REINFORCE_B.pkl
+2026-04-18 15:09:16 | INFO    | --- New Session Started ---
+2026-04-18 15:09:16 | INFO    | Environment: Acrobot-v1
+2026-04-18 15:09:16 | INFO    | Initial State: (array([ 0.9975835 , -0.06947739,  0.99573094,  0.09230331,  0.09999669,
+        0.09107696], dtype=float32), {})
+2026-04-18 15:09:16 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 15:09:16 | INFO    | Action Space: Discrete(3)
+2026-04-18 15:09:16 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-18 15:09:19 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA.pkl
+2026-04-18 15:09:20 | INFO    | Model checkpoint saved: models/_smoke_alg_Q.pkl
+2026-04-18 15:09:22 | INFO    | Model checkpoint saved: models/_smoke_alg_nStep_SARSA.pkl
+2026-04-18 15:09:23 | INFO    | Model checkpoint saved: models/_smoke_alg_REINFORCE_B.pkl
+2026-04-18 15:09:27 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA_Lambda.pkl
+2026-04-18 15:12:24 | INFO    | --- New Session Started ---
+2026-04-18 15:12:24 | INFO    | Environment: Acrobot-v1
+2026-04-18 15:12:24 | INFO    | Initial State: (array([ 0.9987673 , -0.04963773,  0.99993616,  0.01130132, -0.02395521,
+        0.0719183 ], dtype=float32), {})
+2026-04-18 15:12:24 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 15:12:24 | INFO    | Action Space: Discrete(3)
+2026-04-18 15:12:24 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-18 15:12:26 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA.pkl
+2026-04-18 15:12:28 | INFO    | Model checkpoint saved: models/_smoke_alg_Q.pkl
+2026-04-18 15:12:29 | INFO    | Model checkpoint saved: models/_smoke_alg_nStep_SARSA.pkl
+2026-04-18 15:12:32 | INFO    | Model checkpoint saved: models/_smoke_alg_REINFORCE_B.pkl
+2026-04-18 15:12:36 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA_Lambda.pkl

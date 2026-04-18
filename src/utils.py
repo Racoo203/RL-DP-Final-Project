@@ -26,15 +26,17 @@ def save_policy(q_table, name):
 def load_policy(name):
     with open(f"models/{name}.pkl", "rb") as f:
         data = pickle.load(f)
-    
+
     sample = next(iter(data.values()))
     n = len(sample)
-    
-    if isinstance(sample, np.ndarray) and sample.sum() < 1.1:  # probability array = REINFORCE
+
+    is_prob_policy = np.isclose(np.array(sample).sum(), 1.0)
+
+    if is_prob_policy:
         default = defaultdict(lambda: np.full(n, 1.0 / n))
-    else:  # Q-values
+    else:
         default = defaultdict(lambda: np.zeros(n))
-    
+
     default.update(data)
     return default
 
