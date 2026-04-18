@@ -52,11 +52,9 @@ def get_params(trial: Trial, alg_name):
         params["lambda"] = trial.suggest_float("lambda", 0.0, 1.0)
     
     if alg_name == "alg_REINFORCE_B":
-        # Policy gradients usually need smaller learning rates
-        params["alpha_theta"] = trial.suggest_float("alpha", 1e-12, 1e-4, log = True)
-        params["alpha_w"] = trial.suggest_float("alpha", 1e-12, 1e-4, log = True)
-
-        # REINFORCE doesn't use epsilon
+        params["alpha_theta"] = trial.suggest_float("alpha_theta", 1e-4, 1e-1, log=True)
+        params["alpha_w"] = trial.suggest_float("alpha_w", 1e-4, 0.5, log=True)
+        params["n_episodes"] = 500  # override the default 250 for REINFORCE only
         
     return params
 
@@ -113,11 +111,7 @@ def param_opt_pipeline(algorithm, n_trials = 64):
             lambda trial: objective(trial, algorithm), 
             n_trials = n_trials,
             callbacks = [callback],
-            n_jobs = 4
+            n_jobs = 6
         )
-
-        # n_jobs helps with doing multiple trials at once,
-        # but sacrifices reproducibility. Therefore, while slower,
-        # one job at a time will be done.
 
     return study.best_trial

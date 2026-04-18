@@ -1,5 +1,6 @@
 import pickle
-from collections import Counter
+from collections import Counter, defaultdict
+
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -23,9 +24,19 @@ def save_policy(q_table, name):
     main_log.info(f"Model checkpoint saved: {path}")
 
 def load_policy(name):
-    """Loads a Q-table from a pickle file."""
     with open(f"models/{name}.pkl", "rb") as f:
-        return pickle.load(f)
+        data = pickle.load(f)
+    
+    sample = next(iter(data.values()))
+    n = len(sample)
+    
+    if isinstance(sample, np.ndarray) and sample.sum() < 1.1:  # probability array = REINFORCE
+        default = defaultdict(lambda: np.full(n, 1.0 / n))
+    else:  # Q-values
+        default = defaultdict(lambda: np.zeros(n))
+    
+    default.update(data)
+    return default
 
 # --- RESULTS PLOTTING --- 
 

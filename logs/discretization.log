@@ -1,0 +1,34 @@
+2026-04-17 16:01:24 | INFO    | --- New Session Started ---
+2026-04-17 16:01:24 | INFO    | Environment: Acrobot-v1
+2026-04-17 16:01:24 | INFO    | Initial State: (array([ 0.99849933,  0.0547638 ,  0.99992526, -0.01222401,  0.07171959,
+        0.0394736 ], dtype=float32), {})
+2026-04-17 16:01:24 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-17 16:01:24 | INFO    | Action Space: Discrete(3)
+2026-04-17 16:01:24 | INFO    | Discretization Bins: [8 8 6 6]
+2026-04-17 16:01:24 | INFO    | STARTING DISCRETIZATION SEARCH
+2026-04-17 16:02:50 | INFO    | STARTING DISCRETIZATION SEARCH
+2026-04-17 16:03:22 | INFO    | --- New Session Started ---
+2026-04-17 16:03:22 | INFO    | Environment: Acrobot-v1
+2026-04-17 16:03:22 | INFO    | Initial State: (array([ 0.99849933,  0.0547638 ,  0.99992526, -0.01222401,  0.07171959,
+        0.0394736 ], dtype=float32), {})
+2026-04-17 16:03:22 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-17 16:03:22 | INFO    | Action Space: Discrete(3)
+2026-04-17 16:03:22 | INFO    | Discretization Bins: [8 8 6 6]
+2026-04-17 16:03:22 | INFO    | STARTING DISCRETIZATION SEARCH
+2026-04-17 16:06:46 | INFO    | STARTING DISCRETIZATION SEARCH
+2026-04-17 16:07:58 | INFO    | --- New Session Started ---
+2026-04-17 16:07:58 | INFO    | Environment: Acrobot-v1
+2026-04-17 16:07:58 | INFO    | Initial State: (array([ 0.99849933,  0.0547638 ,  0.99992526, -0.01222401,  0.07171959,
+        0.0394736 ], dtype=float32), {})
+2026-04-17 16:07:58 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-17 16:07:58 | INFO    | Action Space: Discrete(3)
+2026-04-17 16:07:58 | INFO    | Discretization Bins: [8 8 6 6]
+2026-04-17 16:07:58 | INFO    | STARTING DISCRETIZATION SEARCH
+2026-04-18 01:57:47 | INFO    | --- New Session Started ---
+2026-04-18 01:57:47 | INFO    | Environment: Acrobot-v1
+2026-04-18 01:57:47 | INFO    | Initial State: (array([ 0.99849933,  0.0547638 ,  0.99992526, -0.01222401,  0.07171959,
+        0.0394736 ], dtype=float32), {})
+2026-04-18 01:57:47 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 01:57:47 | INFO    | Action Space: Discrete(3)
+2026-04-18 01:57:47 | INFO    | Discretization Bins: [8 8 6 6]
+2026-04-18 01:57:48 | INFO    | STARTING DISCRETIZATION SEARCH
