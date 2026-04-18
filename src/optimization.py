@@ -60,7 +60,7 @@ def get_params(trial: Trial, alg_name):
         
     return params
 
-def objective(trial: Trial, algorithm_func, n_seeds = 3):
+def objective(trial: Trial, algorithm_func, n_seeds = 7):
     local_env = gym.make("Acrobot-v1")
     params = get_params(trial, algorithm_func.__name__)
     seed_scores = []
