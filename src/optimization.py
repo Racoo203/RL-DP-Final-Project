@@ -31,7 +31,7 @@ def get_params(trial: Trial, alg_name):
     # Common parameters
     params = {
         # Problem parameters: <- Fixed parameters to the given problem
-        "n_episodes": 250,
+        "n_episodes": 300,
         "gamma": 0.99,
 
         # Config parameters: <- Display and Robustness testing
@@ -42,19 +42,19 @@ def get_params(trial: Trial, alg_name):
     if alg_name in ["alg_SARSA", "alg_Q", "alg_nStep_SARSA", "alg_SARSA_Lambda"]:
         params["alpha"] = trial.suggest_float("alpha", 1e-3, 0.5, log = True)
         params["epsilon"] = 1.0
-        params["epsilon_decay"] = trial.suggest_float("epsilon_decay", 0.9, 0.999)
-        params["epsilon_min"] = 0.05
+        params["epsilon_decay"] = trial.suggest_float("epsilon_decay", 0.980, 0.999, log = True)
+        params["epsilon_min"] = 0.01
 
     if alg_name == "alg_nStep_SARSA":
-        params["n"] = trial.suggest_int("n", 2, 16)
+        params["n"] = trial.suggest_int("n", 2, 14)
 
     if alg_name == "alg_SARSA_Lambda":
         params["lambda"] = trial.suggest_float("lambda", 0.0, 1.0)
     
     if alg_name == "alg_REINFORCE_B":
-        params["alpha_theta"] = trial.suggest_float("alpha_theta", 1e-4, 1e-1, log=True)
-        params["alpha_w"] = trial.suggest_float("alpha_w", 1e-4, 0.5, log=True)
-        params["n_episodes"] = 500  # override the default 250 for REINFORCE only
+        params["alpha_theta"] = trial.suggest_float("alpha_theta", 1e-4, 1e-2, log=True)
+        params["alpha_w"] = trial.suggest_float("alpha_w", 1e-4, 0.3, log=True)
+        params["n_episodes"] = 600  # override the default 250 for REINFORCE only
         
     return params
 
@@ -91,7 +91,7 @@ def param_opt_pipeline(algorithm, n_trials = 64):
 
     storage = optuna.storages.RDBStorage(
         url = "sqlite:///param_opt.sqlite3",
-        engine_kwargs = {"connect_args": {"timeout": 10}}
+        engine_kwargs = {"connect_args": {"timeout": 30}}
     )
 
     study = optuna.create_study(
