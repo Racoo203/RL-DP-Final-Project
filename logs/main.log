@@ -348,3 +348,50 @@
 2026-04-20 08:32:43 | INFO    | alg_REINFORCE_B Evaluation (Greedy): {'mean_reward': np.float64(-500.0), 'std_reward': np.float64(0.0), 'mean_steps': np.float64(500.0), 'success_rate': np.float64(0.0)}
 2026-04-20 08:32:44 | INFO    | Plot created in notebook.
 2026-04-20 08:33:08 | INFO    | Starting Optuna Hyperparameter Search: alg_SARSA_Lambda
+2026-04-20 12:26:00 | INFO    | --- New Session Started ---
+2026-04-20 12:26:00 | INFO    | Environment: Acrobot-v1
+2026-04-20 12:26:00 | INFO    | Initial State: (array([ 0.9995409 , -0.03029715,  0.99644315,  0.08426738,  0.04536925,
+       -0.07749203], dtype=float32), {})
+2026-04-20 12:26:00 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 12:26:00 | INFO    | Action Space: Discrete(3)
+2026-04-20 13:55:00 | INFO    | --- New Session Started ---
+2026-04-20 13:55:00 | INFO    | Environment: Acrobot-v1
+2026-04-20 13:55:00 | INFO    | Initial State: (array([ 0.9977547 , -0.06697426,  0.99984914, -0.01737024, -0.02664137,
+        0.02050568], dtype=float32), {})
+2026-04-20 13:55:00 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 13:55:00 | INFO    | Action Space: Discrete(3)
+2026-04-20 13:59:53 | INFO    | Plot created in notebook.
+2026-04-20 14:25:39 | INFO    | --- New Session Started ---
+2026-04-20 14:25:39 | INFO    | Environment: Acrobot-v1
+2026-04-20 14:25:39 | INFO    | Initial State: (array([ 0.999666  ,  0.02584418,  0.9981443 ,  0.06089257, -0.05374945,
+       -0.01613092], dtype=float32), {})
+2026-04-20 14:25:39 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 14:25:39 | INFO    | Action Space: Discrete(3)
+2026-04-20 14:30:37 | INFO    | Plot created in notebook.
+2026-04-20 16:06:28 | INFO    | --- New Session Started ---
+2026-04-20 16:06:28 | INFO    | Environment: Acrobot-v1
+2026-04-20 16:06:28 | INFO    | Initial State: (array([ 9.9994296e-01,  1.0680391e-02,  9.9956948e-01,  2.9339630e-02,
+        9.5858492e-02, -3.1730102e-04], dtype=float32), {})
+2026-04-20 16:06:28 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 16:06:28 | INFO    | Action Space: Discrete(3)
+2026-04-20 16:12:15 | INFO    | Plot created in notebook.
+2026-04-20 17:47:48 | INFO    | --- New Session Started ---
+2026-04-20 17:47:48 | INFO    | Environment: Acrobot-v1
+2026-04-20 17:47:48 | INFO    | Initial State: (array([ 0.9995829 ,  0.02888084,  0.9958317 ,  0.09120975, -0.05800736,
+        0.09271692], dtype=float32), {})
+2026-04-20 17:47:48 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 17:47:48 | INFO    | Action Space: Discrete(3)
+2026-04-20 17:53:29 | INFO    | Plot created in notebook.
+2026-04-20 20:03:53 | INFO    | Starting Experiment: alg_SARSA_Lambda
+2026-04-20 20:03:53 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.4113845980571551, 'epsilon': 1.0, 'floor_fraction': 0.31124528358077885, 'epsilon_min': 0.01, 'epsilon_decay': 0.951688066627356, 'lambda': 0.9391423529971095, 'seed': 42}
+2026-04-20 20:09:29 | INFO    | alg_SARSA_Lambda Training Completed
+2026-04-20 20:09:29 | INFO    | Model checkpoint saved: models/alg_SARSA_Lambda.pkl
+2026-04-20 20:09:31 | INFO    | alg_SARSA_Lambda Evaluation (Greedy): {'mean_reward': np.float64(-500.0), 'std_reward': np.float64(0.0), 'mean_steps': np.float64(500.0), 'success_rate': np.float64(0.0)}
+2026-04-20 20:09:32 | INFO    | Plot created in notebook.
+2026-04-20 20:18:29 | INFO    | --- New Session Started ---
+2026-04-20 20:18:29 | INFO    | Environment: Acrobot-v1
+2026-04-20 20:18:29 | INFO    | Initial State: (array([ 0.9990145 ,  0.04438548,  0.99694854, -0.07806157, -0.08378711,
+       -0.07127912], dtype=float32), {})
+2026-04-20 20:18:29 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 20:18:29 | INFO    | Action Space: Discrete(3)
+2026-04-20 20:52:01 | INFO    | Plot created in notebook.
