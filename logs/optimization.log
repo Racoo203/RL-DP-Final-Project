@@ -4915,3 +4915,11 @@
 2026-04-20 01:47:19 | INFO    | alg_Q | Target reached, returning best trial immediately
 2026-04-20 01:48:51 | INFO    | alg_Q | Finished: 64 | Target: 64 | Remaining: 0
 2026-04-20 01:48:51 | INFO    | alg_Q | Target reached, returning best trial immediately
+2026-04-20 01:54:20 | INFO    | alg_Q | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 01:54:20 | INFO    | alg_Q | Target reached, returning best trial immediately
+2026-04-20 01:55:52 | INFO    | alg_nStep_SARSA | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 01:55:52 | INFO    | alg_nStep_SARSA | Target reached, returning best trial immediately
+2026-04-20 01:57:18 | INFO    | alg_REINFORCE_B | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 01:57:18 | INFO    | alg_REINFORCE_B | Target reached, returning best trial immediately
+2026-04-20 02:01:04 | INFO    | alg_SARSA_Lambda | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 02:01:04 | INFO    | alg_SARSA_Lambda | Target reached, returning best trial immediately
