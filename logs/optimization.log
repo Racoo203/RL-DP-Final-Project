@@ -7091,3 +7091,21 @@
 2026-04-20 20:02:16 | INFO    | Trial 58 | Seed 6 | Starting | Params: {'n_episodes': 300, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.49380800812193154, 'epsilon': 1.0, 'floor_fraction': 0.4093941510202361, 'epsilon_min': 0.01, 'epsilon_decay': 0.9629562524599026, 'lambda': 0.902438140462802, 'seed': 6}
 2026-04-20 20:03:53 | INFO    | Trial 58 | Seed 6 | Ended | Score: -193.9
 2026-04-20 20:03:53 | INFO    | Trial 58 | Score: -209.9888888888889 | Std: 40.26643408952069
+2026-04-20 21:13:58 | INFO    | alg_Q | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:13:58 | INFO    | alg_Q | Target reached, returning best trial immediately
+2026-04-20 21:16:40 | INFO    | alg_Q | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:16:40 | INFO    | alg_Q | Target reached, returning best trial immediately
+2026-04-20 21:18:25 | INFO    | alg_nStep_SARSA | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:18:25 | INFO    | alg_nStep_SARSA | Target reached, returning best trial immediately
+2026-04-20 21:20:00 | INFO    | alg_REINFORCE_B | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:20:00 | INFO    | alg_REINFORCE_B | Target reached, returning best trial immediately
+2026-04-20 21:23:33 | INFO    | alg_SARSA_Lambda | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:23:33 | INFO    | alg_SARSA_Lambda | Target reached, returning best trial immediately
+2026-04-20 21:42:22 | INFO    | alg_Q | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:42:22 | INFO    | alg_Q | Target reached, returning best trial immediately
+2026-04-20 21:45:37 | INFO    | alg_nStep_SARSA | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:45:37 | INFO    | alg_nStep_SARSA | Target reached, returning best trial immediately
+2026-04-20 21:49:06 | INFO    | alg_REINFORCE_B | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:49:06 | INFO    | alg_REINFORCE_B | Target reached, returning best trial immediately
+2026-04-20 21:56:18 | INFO    | alg_SARSA_Lambda | Finished: 64 | Target: 64 | Remaining: 0
+2026-04-20 21:56:18 | INFO    | alg_SARSA_Lambda | Target reached, returning best trial immediately
