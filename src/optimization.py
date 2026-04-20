@@ -42,13 +42,11 @@ def get_params(trial: Trial, alg_name):
     if alg_name in ["alg_SARSA", "alg_Q", "alg_nStep_SARSA", "alg_SARSA_Lambda"]:
         params["alpha"] = trial.suggest_float("alpha", 1e-3, 0.5, log = True)
         params["epsilon"] = 1.0
-        # params["floor_fraction"] = trial.suggest_float("floor_fraction", 0.4, 0.8)
+        params["floor_fraction"] = trial.suggest_float("floor_fraction", 0.3, 0.8)
         params["epsilon_min"] = 0.01
 
-        # decay_steps = int(params["floor_fraction"] * params["n_episodes"])
-        # params["epsilon_decay"] = params["epsilon_min"] ** (1.0 / decay_steps)
-        params["epsilon_decay"] = trial.suggest_float("alpha", 0.9, 0.999, log = True)
-
+        decay_steps = int(params["floor_fraction"] * params["n_episodes"])
+        params["epsilon_decay"] = params["epsilon_min"] ** (1.0 / decay_steps)
 
     if alg_name == "alg_nStep_SARSA":
         params["n"] = trial.suggest_int("n", 2, 14)
