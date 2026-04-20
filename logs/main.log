@@ -145,3 +145,120 @@
 2026-04-18 15:12:29 | INFO    | Model checkpoint saved: models/_smoke_alg_nStep_SARSA.pkl
 2026-04-18 15:12:32 | INFO    | Model checkpoint saved: models/_smoke_alg_REINFORCE_B.pkl
 2026-04-18 15:12:36 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA_Lambda.pkl
+2026-04-18 23:52:57 | INFO    | --- New Session Started ---
+2026-04-18 23:52:57 | INFO    | Environment: Acrobot-v1
+2026-04-18 23:52:57 | INFO    | Initial State: (array([ 0.99878895, -0.04920017,  0.9999053 , -0.01376209, -0.07032187,
+        0.07628997], dtype=float32), {})
+2026-04-18 23:52:57 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-18 23:52:57 | INFO    | Action Space: Discrete(3)
+2026-04-18 23:52:57 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-18 23:52:58 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA.pkl
+2026-04-18 23:53:00 | INFO    | Model checkpoint saved: models/_smoke_alg_Q.pkl
+2026-04-18 23:53:01 | INFO    | Model checkpoint saved: models/_smoke_alg_nStep_SARSA.pkl
+2026-04-18 23:53:03 | INFO    | Model checkpoint saved: models/_smoke_alg_REINFORCE_B.pkl
+2026-04-18 23:53:06 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA_Lambda.pkl
+2026-04-18 23:53:06 | INFO    | Starting Experiment: alg_SARSA
+2026-04-18 23:53:06 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'epsilon': 1.0, 'epsilon_min': 0.05, 'seed': 42, 'show_progress': False, 'alpha': 0.15, 'epsilon_decay': 0.99}
+2026-04-18 23:56:11 | INFO    | alg_SARSA Training Completed
+2026-04-18 23:56:11 | INFO    | Model checkpoint saved: models/alg_SARSA.pkl
+2026-04-18 23:56:17 | INFO    | alg_SARSA Evaluation (Greedy): {'mean_reward': np.float64(-216.65), 'std_reward': np.float64(44.68475690881623), 'mean_steps': np.float64(217.65), 'success_rate': np.float64(1.0)}
+2026-04-18 23:56:17 | INFO    | Plot created in notebook.
+2026-04-18 23:56:55 | INFO    | Starting Optuna Hyperparameter Search: alg_Q
+2026-04-19 01:09:50 | INFO    | Starting Experiment: alg_Q
+2026-04-19 07:04:20 | INFO    | Starting Experiment: alg_Q
+2026-04-19 07:04:20 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.3710585472874235, 'epsilon': 1.0, 'epsilon_decay': 0.9625766926013063, 'epsilon_min': 0.05, 'seed': 42}
+2026-04-19 07:09:20 | INFO    | alg_Q Training Completed
+2026-04-19 07:09:21 | INFO    | Model checkpoint saved: models/alg_Q.pkl
+2026-04-19 07:09:26 | INFO    | alg_Q Evaluation (Greedy): {'mean_reward': np.float64(-246.4), 'std_reward': np.float64(44.40653105118661), 'mean_steps': np.float64(247.4), 'success_rate': np.float64(1.0)}
+2026-04-19 07:09:27 | INFO    | Plot created in notebook.
+2026-04-19 07:49:24 | INFO    | Starting Optuna Hyperparameter Search: alg_nStep_SARSA
+2026-04-19 10:25:57 | INFO    | Starting Experiment: alg_nStep_SARSA
+2026-04-19 10:25:57 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.3119925234636431, 'epsilon': 1.0, 'epsilon_decay': 0.9604216299532472, 'epsilon_min': 0.05, 'n': 9, 'seed': 42}
+2026-04-19 10:27:10 | INFO    | alg_nStep_SARSA Training Completed
+2026-04-19 10:27:10 | INFO    | Model checkpoint saved: models/alg_nStep_SARSA.pkl
+2026-04-19 10:27:13 | INFO    | alg_nStep_SARSA Evaluation (Greedy): {'mean_reward': np.float64(-500.0), 'std_reward': np.float64(0.0), 'mean_steps': np.float64(500.0), 'success_rate': np.float64(0.0)}
+2026-04-19 10:27:13 | INFO    | Plot created in notebook.
+2026-04-19 10:27:34 | INFO    | Starting Optuna Hyperparameter Search: alg_REINFORCE_B
+2026-04-19 13:23:50 | INFO    | Starting Experiment: alg_REINFORCE_B
+2026-04-19 13:23:50 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'show_progress': False, 'alpha_theta': 0.0002767379553232686, 'alpha_w': 0.01895554142016998, 'seed': 42}
+2026-04-19 13:27:01 | INFO    | alg_REINFORCE_B Training Completed
+2026-04-19 13:27:01 | INFO    | Model checkpoint saved: models/alg_REINFORCE_B.pkl
+2026-04-19 13:27:05 | INFO    | alg_REINFORCE_B Evaluation (Greedy): {'mean_reward': np.float64(-494.4), 'std_reward': np.float64(24.40983408382777), 'mean_steps': np.float64(494.45), 'success_rate': np.float64(0.05)}
+2026-04-19 13:27:06 | INFO    | Plot created in notebook.
+2026-04-19 13:27:33 | INFO    | Starting Optuna Hyperparameter Search: alg_SARSA_Lambda
+2026-04-19 20:42:36 | INFO    | Starting Experiment: alg_SARSA_Lambda
+2026-04-19 20:42:36 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'show_progress': False, 'alpha': 0.37271556419225366, 'epsilon': 1.0, 'epsilon_decay': 0.9484162715922452, 'epsilon_min': 0.05, 'lambda': 0.5411888353200587, 'seed': 42}
+2026-04-19 20:51:27 | INFO    | alg_SARSA_Lambda Training Completed
+2026-04-19 20:51:27 | INFO    | Model checkpoint saved: models/alg_SARSA_Lambda.pkl
+2026-04-19 20:51:31 | INFO    | alg_SARSA_Lambda Evaluation (Greedy): {'mean_reward': np.float64(-175.85), 'std_reward': np.float64(91.88649247849217), 'mean_steps': np.float64(176.8), 'success_rate': np.float64(0.95)}
+2026-04-19 20:51:32 | INFO    | Plot created in notebook.
+2026-04-20 00:04:46 | INFO    | --- New Session Started ---
+2026-04-20 00:04:46 | INFO    | Environment: Acrobot-v1
+2026-04-20 00:04:46 | INFO    | Initial State: (array([0.9993222 , 0.03681209, 0.99911016, 0.04217741, 0.08655544,
+       0.03792065], dtype=float32), {})
+2026-04-20 00:04:46 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 00:04:46 | INFO    | Action Space: Discrete(3)
+2026-04-20 00:19:22 | INFO    | --- New Session Started ---
+2026-04-20 00:19:22 | INFO    | Environment: Acrobot-v1
+2026-04-20 00:19:22 | INFO    | Initial State: (array([ 0.99999577, -0.0029029 ,  0.99960417, -0.02813418,  0.04112067,
+        0.01657751], dtype=float32), {})
+2026-04-20 00:19:22 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 00:19:22 | INFO    | Action Space: Discrete(3)
+2026-04-20 00:20:17 | INFO    | --- New Session Started ---
+2026-04-20 00:20:17 | INFO    | Environment: Acrobot-v1
+2026-04-20 00:20:17 | INFO    | Initial State: (array([ 0.99611825, -0.08802539,  0.99781495,  0.06607047, -0.00992397,
+       -0.01637535], dtype=float32), {})
+2026-04-20 00:20:17 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 00:20:17 | INFO    | Action Space: Discrete(3)
+2026-04-20 00:24:13 | INFO    | --- New Session Started ---
+2026-04-20 00:24:13 | INFO    | Environment: Acrobot-v1
+2026-04-20 00:24:13 | INFO    | Initial State: (array([ 0.9983599 ,  0.05724872,  0.9978835 ,  0.06502737,  0.02766049,
+       -0.07472888], dtype=float32), {})
+2026-04-20 00:24:13 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 00:24:13 | INFO    | Action Space: Discrete(3)
+2026-04-20 00:28:45 | INFO    | --- New Session Started ---
+2026-04-20 00:28:45 | INFO    | Environment: Acrobot-v1
+2026-04-20 00:28:45 | INFO    | Initial State: (array([ 0.99679774, -0.07996381,  0.9963636 , -0.08520307,  0.04916061,
+       -0.03366727], dtype=float32), {})
+2026-04-20 00:28:46 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 00:28:46 | INFO    | Action Space: Discrete(3)
+2026-04-20 01:08:22 | INFO    | Plot created in notebook.
+2026-04-20 01:42:11 | INFO    | --- New Session Started ---
+2026-04-20 01:42:11 | INFO    | Environment: Acrobot-v1
+2026-04-20 01:42:11 | INFO    | Initial State: (array([ 0.9950453 , -0.09942251,  0.9992427 ,  0.03890928, -0.02566549,
+        0.09918109], dtype=float32), {})
+2026-04-20 01:42:11 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 01:42:11 | INFO    | Action Space: Discrete(3)
+2026-04-20 01:42:12 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-20 01:42:13 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA.pkl
+2026-04-20 01:42:13 | INFO    | Model checkpoint saved: models/_smoke_alg_Q.pkl
+2026-04-20 01:42:14 | INFO    | Model checkpoint saved: models/_smoke_alg_nStep_SARSA.pkl
+2026-04-20 01:42:14 | INFO    | Model checkpoint saved: models/_smoke_alg_REINFORCE_B.pkl
+2026-04-20 01:42:16 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA_Lambda.pkl
+2026-04-20 01:42:16 | INFO    | Starting Experiment: alg_SARSA
+2026-04-20 01:42:16 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'epsilon': 1.0, 'epsilon_min': 0.05, 'seed': 42, 'show_progress': False, 'alpha': 0.15, 'epsilon_decay': 0.99}
+2026-04-20 01:43:47 | INFO    | alg_SARSA Training Completed
+2026-04-20 01:43:47 | INFO    | Model checkpoint saved: models/alg_SARSA.pkl
+2026-04-20 01:43:49 | INFO    | alg_SARSA Evaluation (Greedy): {'mean_reward': np.float64(-198.45), 'std_reward': np.float64(85.13076705868448), 'mean_steps': np.float64(199.45), 'success_rate': np.float64(1.0)}
+2026-04-20 01:43:49 | INFO    | Plot created in notebook.
+2026-04-20 01:44:07 | INFO    | Starting Optuna Hyperparameter Search: alg_Q
+2026-04-20 01:45:17 | INFO    | --- New Session Started ---
+2026-04-20 01:45:17 | INFO    | Environment: Acrobot-v1
+2026-04-20 01:45:17 | INFO    | Initial State: (array([ 0.9965014 , -0.08357643,  0.9971402 ,  0.07557387, -0.09932782,
+        0.01312722], dtype=float32), {})
+2026-04-20 01:45:17 | INFO    | State Space: Box([ -1.        -1.        -1.        -1.       -12.566371 -28.274334], [ 1.        1.        1.        1.       12.566371 28.274334], (6,), float32)
+2026-04-20 01:45:17 | INFO    | Action Space: Discrete(3)
+2026-04-20 01:45:17 | INFO    | Discretization Bins: [10 10 12 12]
+2026-04-20 01:45:18 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA.pkl
+2026-04-20 01:45:18 | INFO    | Model checkpoint saved: models/_smoke_alg_Q.pkl
+2026-04-20 01:45:19 | INFO    | Model checkpoint saved: models/_smoke_alg_nStep_SARSA.pkl
+2026-04-20 01:45:19 | INFO    | Model checkpoint saved: models/_smoke_alg_REINFORCE_B.pkl
+2026-04-20 01:45:21 | INFO    | Model checkpoint saved: models/_smoke_alg_SARSA_Lambda.pkl
+2026-04-20 01:45:21 | INFO    | Starting Experiment: alg_SARSA
+2026-04-20 01:45:21 | INFO    | Hyperparameters: {'n_episodes': 2000, 'gamma': 0.99, 'epsilon': 1.0, 'epsilon_min': 0.05, 'seed': 42, 'show_progress': False, 'alpha': 0.15, 'epsilon_decay': 0.99}
+2026-04-20 01:47:03 | INFO    | alg_SARSA Training Completed
+2026-04-20 01:47:03 | INFO    | Model checkpoint saved: models/alg_SARSA.pkl
+2026-04-20 01:47:06 | INFO    | alg_SARSA Evaluation (Greedy): {'mean_reward': np.float64(-172.05), 'std_reward': np.float64(37.27126909564524), 'mean_steps': np.float64(173.05), 'success_rate': np.float64(1.0)}
+2026-04-20 01:47:07 | INFO    | Plot created in notebook.
+2026-04-20 01:47:18 | INFO    | Starting Optuna Hyperparameter Search: alg_Q
+2026-04-20 01:48:50 | INFO    | Starting Optuna Hyperparameter Search: alg_Q
