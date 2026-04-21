@@ -1,0 +1,40 @@
+
+\subsection{Continuous Representation for the Neural Network}
+
+The neural network variant of REINFORCE bypasses discretisation entirely. The same $\operatorname{arctan2}$ transform is applied, and the resulting 4D state is normalised to $[-1, 1]$ using the same bounds:
+\begin{equation}
+    \tilde{s}_i = \operatorname{clip}\!\left(
+        2 \cdot \frac{s_i - l_i}{h_i - l_i} - 1,\ -1,\ 1
+    \right).
+\end{equation}
+This preserves the spatial structure of the state space while putting all inputs on a consistent scale suitable for neural network processing. Using the continuous state rather than a discrete index allows the network to
+generalise across nearby states, which directly addresses the sparse coverage problem that afflicts the tabular REINFORCE implementation.
+
+\subsection{REINFORCE with Baseline (Neural Network)}
+\label{subsec:reinforce_nn}
+
+The neural network variant follows the same algorithm as \cref{subsec:reinforce_tabular}, with the tabular logit and value stores replaced by a shared-trunk actor-critic network. The architecture maps the normalised 4D continuous state through two hidden layers of 64 units with Tanh activations to a shared feature representation, which is then passed through a policy head (producing 3 action logits) and a value head (producing a scalar $\hat{v}(s)$). Formally:
+\begin{align}
+    \mathbf{f} &= \text{Tanh}(W_2\,\text{Tanh}(W_1 \tilde{s} + b_1) + b_2), \\
+    \boldsymbol{\pi} &= \text{softmax}(W_\pi \mathbf{f} + b_\pi), \qquad
+    \hat{v} = W_v \mathbf{f} + b_v.
+\end{align}
+A single Adam optimiser with separate learning rates for the policy and value parameters is used. This avoids the shared-trunk gradient conflict that arises when two independent backward passes modify the trunk weights in conflicting directions. The combined loss is:
+\begin{equation}
+    \mathcal{L} = \mathcal{L}_\text{policy}
+    + 0.5\,\mathcal{L}_\text{value}
+    - 0.01\,\mathcal{H}(\pi),
+\end{equation}
+where $\mathcal{H}(\pi)$ is the mean entropy of the policy distribution, added to prevent premature convergence to a deterministic policy. Gradient norms are clipped to $1.0$ for training stability.
+
+\section{Implementation Notes}
+\label{app:implementation}
+
+\paragraph{True Online SARSA($\lambda$) as tabular linear function approximation.}
+Under one-hot features $\mathbf{x}(s,a)$, the inner product $\mathbf{w}^\top \mathbf{x}(s,a)$ reduces to the scalar $w_{s,a}$, which is exactly the Q-table entry $Q(s,a)$. Similarly, $\mathbf{z}^\top \mathbf{x} =
+z_{s,a}$ (the eligibility trace for the current state-action pair). All vector
+operations in the True Online pseudocode therefore reduce to scalar operations on the Q-table and trace table, making the algorithm identical in structure to the tabular case while remaining a faithful implementation of the linear function approximation variant.
+
+\paragraph{Policy loading after serialisation.}
+Tabular policies are saved using \texttt{pickle} as plain \texttt{dict} objects. On loading, they must be reconstructed as \texttt{defaultdict} instances to preserve the zero-initialisation behaviour for unseen states. For Q-table algorithms, the default factory returns \texttt{np.zeros(n\_actions)}. For REINFORCE, it returns a uniform probability vector
+\texttt{np.full(n\_actions, 1/n\_actions)}, which is the correct prior for states not encountered during training.
